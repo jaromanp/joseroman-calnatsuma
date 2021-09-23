@@ -7,17 +7,19 @@ object Main extends App {
         val s = StdIn.readLine(prompt)
         s.toInt         
     }
+
     def esCero(nat:Nat) = nat match {
         case Cero() => true
         case Suc(nat) => false
     }
+
     def conIntANat(i:Int):Nat = {
         //if (i == 0) val Natural = new Cero
         //else val Natural = new Suc
     }
 
     def imprimirNat(nat:Nat):String = {
-        val Imprimir 
+         
     }
 
     def sumaNat(nat1:Nat,nat2:Nat):Nat = {
@@ -33,5 +35,6 @@ object Main extends App {
     
     val result = sumaNat(natural1,natural2)
     
-    imprimirNat(result)
+    val impresion = imprimirNat(result)
+    println(impresion)
 }
