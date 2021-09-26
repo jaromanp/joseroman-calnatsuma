@@ -47,16 +47,12 @@ object Main extends App {
     def restaNat(nat1:Nat,nat2:Nat):Nat = (nat1,nat2) match {      
         case (nat1,Cero()) => nat1
         case (Suc(nat1p),Suc(nat2p)) => restaNat(nat1p,nat2p)
-    }
-
-    def multNat(nat1:Nat,nat2:Nat):Nat = {
-        def imultNat(nat1:Nat,nat2:Nat,acum:Nat):Nat = (nat1,nat2) match {
-            case (nat1,Cero())                  => acum
-            case (nat1,Suc(Cero()))             => nat1
-            case (Suc(nat1p),Suc(nat2p))        => imultNat((sumaNat(nat1,nat1)),nat2p,sumaNat(nat1p,acum))
-        }
-        imultNat(nat1,nat2,Cero())
-    }
+    } 
+    
+    def multNat(nat1:Nat,nat2:Nat):Nat = (nat1,nat2) match {
+        case (Cero(),nat2)     => Cero()
+        case (Suc(nat1p),_)    => sumaNat(multNat(nat1p,nat2),nat2)
+    } 
 
     //Main
     val entero1 = leerInt("Leer primer entero ")
